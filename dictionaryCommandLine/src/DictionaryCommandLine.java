@@ -81,7 +81,6 @@ public class DictionaryCommandLine {
                 case 6:{
                     //Show all word
                     (new DictionaryCmd(this.dictionaryData)).showAllWords();
-
                     break;
                 }
                 default:

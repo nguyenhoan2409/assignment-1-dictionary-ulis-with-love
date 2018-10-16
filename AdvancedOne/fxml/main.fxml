@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="750.0" prefHeight="584.0" prefWidth="853.0" style="-fx-border-width: 30;" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+   <center>
+       <HBox minHeight="450.0" minWidth="750.0" prefHeight="563.0" prefWidth="786.0" style="-fx-border-width: 30;" BorderPane.alignment="CENTER">
+           <children>
+               <VBox minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="448.0" prefWidth="243.0" style="-fx-background-color: #004a7f;">
+                   <children>
+                       <ImageView fitHeight="108.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../img/logoapp.png" />
+                           </image>
+                       </ImageView>
+                       <HBox fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="243.0" VBox.vgrow="NEVER">
+                           <children>
+                               <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                   <HBox.margin>
+                                       <Insets left="10.0" top="6.0" />
+                                   </HBox.margin>
+                                   <image>
+                                       <Image url="@../img/search.png" />
+                                   </image>
+                               </ImageView>
+                               <Label prefHeight="38.0" prefWidth="75.0" text="Tìm kiếm:" textFill="WHITE">
+                                   <font>
+                                       <Font size="16.0" />
+                                   </font></Label>
+                           </children>
+                       </HBox>
+                       <TextField fx:id="word_target" onKeyReleased="#updateListView" prefHeight="27.0" prefWidth="210.0" promptText="Nhập từ cần tìm" styleClass="text-field" />
+                       <ListView fx:id="listWord" opacity="0.6" prefHeight="461.0" prefWidth="243.0" style="-fx-background-color: #004a7f;" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                               <Insets top="10.0" />
+                           </VBox.margin>
+                           <effect>
+                               <Blend />
+                           </effect>
+                       </ListView>
+                   </children>
+               </VBox>
+               <Separator orientation="VERTICAL" prefHeight="200.0" />
+               <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="505.0" HBox.hgrow="ALWAYS">
+                   <children>
+                       <TabPane prefHeight="131.0" prefWidth="1280.0" stylesheets="@bootstrap3.css" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                               <Tab text="Từ điển">
+                                   <content>
+                                       <AnchorPane prefHeight="94.0" prefWidth="520.0" style="-fx-background-color: #62b7ff; -fx-border-radius: 15; -fx-border-insets: 20;">
+                                           <children>
+                                               <HBox alignment="CENTER_LEFT" layoutX="12.0" prefHeight="91.0" prefWidth="523.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                       <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddWord" prefHeight="81.0" prefWidth="63.0" text="Thêm">
+                                                           <graphic>
+                                                               <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                                   <image>
+                                                                       <Image url="@../img/add-3.png" />
+                                                                   </image>
+                                                               </ImageView>
+                                                           </graphic>
+                                                           <HBox.margin>
+                                                               <Insets left="30.0" />
+                                                           </HBox.margin>
+                                                       </Button>
+                                                       <Button fx:id="editButton" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#loadEditWord" prefHeight="81.0" prefWidth="63.0" text="Sửa">
+                                                           <graphic>
+                                                               <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                                   <image>
+                                                                       <Image url="@../img/edit-1.png" />
+                                                                   </image>
+                                                               </ImageView>
+                                                           </graphic>
+                                                           <HBox.margin>
+                                                               <Insets left="30.0" />
+                                                           </HBox.margin>
+                                                       </Button>
+                                                       <Button fx:id="removeButton" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#removeWord" onMouseClicked="#removeWord" prefHeight="81.0" prefWidth="63.0" text="Xóa">
+                                                           <graphic>
+                                                               <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                                   <image>
+                                                                       <Image url="@../img/garbage-2.png" />
+                                                                   </image>
+                                                               </ImageView>
+                                                           </graphic>
+                                                           <HBox.margin>
+                                                               <Insets left="30.0" />
+                                                           </HBox.margin>
+                                                       </Button>
+                                                       <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="226.0" layoutY="17.0" mnemonicParsing="false" onAction="#loadGoogleTrans" prefHeight="81.0" prefWidth="63.0" text="API">
+                                                           <graphic>
+                                                               <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                                   <image>
+                                                                       <Image url="@../img/api.png" />
+                                                                   </image>
+                                                               </ImageView>
+                                                           </graphic>
+                                                           <HBox.margin>
+                                                               <Insets left="30.0" />
+                                                           </HBox.margin>
+                                                       </Button>
+                                                   </children>
+                                               </HBox>
+                                           </children>
+                                       </AnchorPane>
+                                   </content></Tab>
+                        <Tab text="Quản lí bộ">
+                           <content>
+                              <AnchorPane prefHeight="94.0" prefWidth="520.0" style="-fx-background-color: #62b7ff; -fx-border-radius: 15; -fx-border-insets: 20;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="12.0" prefHeight="91.0" prefWidth="523.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadImportFromFile" prefHeight="81.0" prefWidth="72.0" text="Import">
+                                             <graphic>
+                                                <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/folder-15.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="40.0" layoutY="17.0" mnemonicParsing="false" onAction="#loadImportFromMySQL" prefHeight="81.0" prefWidth="72.0" text="MySQL">
+                                             <graphic>
+                                                <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/database-1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="40.0" layoutY="17.0" mnemonicParsing="false" onAction="#loadExportToFile" prefHeight="81.0" prefWidth="72.0" text="Export">
+                                             <graphic>
+                                                <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/save.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="264.0" layoutY="16.0" mnemonicParsing="false" onAction="#removeAllWord" prefHeight="81.0" prefWidth="72.0" text="Delete">
+                                             <graphic>
+                                                <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/garbage-1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Thông tin">
+                           <content>
+                              <AnchorPane prefHeight="94.0" prefWidth="520.0" style="-fx-background-color: #62b7ff; -fx-border-radius: 15; -fx-border-insets: 20;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="12.0" prefHeight="91.0" prefWidth="523.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAuthor" prefHeight="81.0" prefWidth="66.0" text="Author">
+                                             <graphic>
+                                                <ImageView fitHeight="70.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                   <image>
+                                                      <Image url="@../img/user-3.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                           </tabs>
+                       </TabPane>
+                       <Separator prefWidth="200.0" />
+                  <AnchorPane prefHeight="419.0" prefWidth="592.0" style="-fx-background-color: #62b7ff;" VBox.vgrow="ALWAYS">
+                     <children>
+                               <VBox prefHeight="414.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <children>
+                                       <HBox prefHeight="25.0" prefWidth="545.0">
+                                           <children>
+                                               <ImageView fx:id="speaker" fitHeight="30.0" fitWidth="33.0" onMouseClicked="#speakEng" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                       <Image url="@../img/speaker-2.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                       <Insets left="15.0" top="5.0" />
+                                                   </HBox.margin>
+                                               </ImageView>
+                                               <Label fx:id="target" prefHeight="35.0" prefWidth="488.0" textFill="#004879" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                       <Font size="24.0" />
+                                                   </font>
+                                                   <opaqueInsets>
+                                                       <Insets left="3.0" />
+                                                   </opaqueInsets>
+                                                   <padding>
+                                                       <Insets left="10.0" />
+                                                   </padding>
+                                       <HBox.margin>
+                                          <Insets top="3.0" />
+                                       </HBox.margin>
+                                               </Label>
+                                           </children>
+                                           <VBox.margin>
+                                               <Insets />
+                                           </VBox.margin>
+                                       </HBox>
+                              <Label fx:id="spell" style="-fx-font-style: italic;" textFill="#055d8d">
+                                 <VBox.margin>
+                                    <Insets left="60.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="word_explain" alignment="TOP_LEFT" prefHeight="374.0" prefWidth="601.0" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                                   </children>
+                               </VBox>
+                     </children>
+                  </AnchorPane>
+                   </children>
+               </VBox>
+           </children>
+       </HBox>
+   </center>
+   <top>
+      <Separator prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <Separator prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

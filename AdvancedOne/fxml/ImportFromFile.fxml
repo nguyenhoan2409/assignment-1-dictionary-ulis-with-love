@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="548.0" style="-fx-background-color: #0045b5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImportFromFile">
+    <bottom>
+        <AnchorPane prefHeight="89.0" prefWidth="548.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="14.0" mnemonicParsing="false" onAction="#insertFromFile" prefHeight="32.0" prefWidth="72.0" styleClass="warning" stylesheets="@bootstrap3.css" text="Import" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="279.0" />
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="14.0" mnemonicParsing="false" onAction="#cancelImport" prefHeight="32.0" prefWidth="53.0" styleClass="info" stylesheets="@bootstrap3.css" text="Hủy" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="196.0" />
+            </children>
+        </AnchorPane>
+    </bottom>
+    <center>
+        <AnchorPane prefHeight="284.0" prefWidth="536.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="source" editable="false" layoutX="138.0" layoutY="86.0" prefHeight="30.0" prefWidth="242.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="34.0" layoutY="85.0" prefHeight="32.0" prefWidth="96.0" text="Đường dẫn:" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Button layoutX="380.0" layoutY="85.0" mnemonicParsing="false" onAction="#selectFile" styleClass="primary" stylesheets="@bootstrap3.css" text="Chọn file">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            <CheckBox fx:id="remove" layoutX="215.0" layoutY="170.0" mnemonicParsing="false" selected="true" stylesheets="@bootstrap3.css" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="237.0" layoutY="175.0" text="Xóa từ điển cũ" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

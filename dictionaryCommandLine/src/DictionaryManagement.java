@@ -89,7 +89,7 @@ public class DictionaryManagement {
             System.out.println("Ban co the su dung option 2 de sua tu nay");
             return;
         }
-        else if(!empty){
+        else if(empty){
             System.out.println("Tu vua nhap khong hop le");
         }
         else{
@@ -110,8 +110,6 @@ public class DictionaryManagement {
                 break;
             }
         }
-
-
 
         // add new word if word (t) exist!
         if (check){

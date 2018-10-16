@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="451.0" prefWidth="548.0" style="-fx-background-color: #0796fc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Author">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="255.0" prefHeight="45.0" prefWidth="230.0" text="Nguyễn Linh UET" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="267.0" layoutX="174.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../img/author.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" layoutY="300.0" prefHeight="35.0" prefWidth="87.0" text="Facebook:" textFill="#003679">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink alignment="CENTER" layoutX="136.0" layoutY="335.0" onAction="#gotoMyFacebook" text="https://facebook.com/kenny.nguyen.153" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Hyperlink>
+      <Label alignment="CENTER" layoutX="217.0" layoutY="363.0" prefHeight="35.0" prefWidth="103.0" text="Nguồn từ điển:" textFill="#003679">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink alignment="CENTER" layoutX="172.0" layoutY="398.0" onAction="#gotoDatabase" text="https://shimivn.blogspot.com" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
