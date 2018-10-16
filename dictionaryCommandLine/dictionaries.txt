@@ -1,6 +1,7 @@
-5
+6
 Hello	Xin chao
 Love	Tinh Yeu
 Football	Bong da
 Crush	Trang
-Lovely	dang yeu
+Lovely	Dang yeu
+Cat Tung
