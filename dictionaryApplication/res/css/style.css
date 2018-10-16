@@ -1,0 +1,93 @@
+.w7button {
+	-fx-background-color: 
+		#707070,
+		linear-gradient(#fcfcfc, #f3f3f3),
+		linear-gradient(#f2f2f2 0%, #ebebeb 49%, #dddddd 50%, #cfcfcf 100%);
+	-fx-background-insets: 0, 1, 2;
+	-fx-background-radius: 3, 2, 1;
+	-fx-padding: 2 5;
+	-fx-text-fill: black;
+	-fx-font-size: 12px;
+	-fx-content-display: top;
+	-fx-min-width: 80px;
+}
+
+.w7button:hover {
+	-fx-background-color:
+		#3c7fb1,
+		linear-gradient(#fafdfe, #e8f5fc),
+		linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+}
+
+.w7button:pressed {
+	-fx-background-color:
+		#3c7fb1,
+		linear-gradient(#b8dcef, #a8d5ed),
+		linear-gradient(#e5f4fc 0%, #c4e5f6 49%, #98d1ef 50%, #68d3db 100%);
+}
+
+#wordlist {
+	-fx-spacing: 50px;
+	-fx-alignment: baseline-left;
+}
+
+.tab-pane {
+	-fx-tab-min-width: 70px;
+	-fx-tab-max-width: 70px;
+}
+
+.tab-pane *.tab-header-background {
+	-fx-background-color: none;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.tab {
+	-fx-padding: 0 20px 0;
+}
+
+.tab-content {
+	-fx-background-color: #d0e5f2;
+	-fx-border-radius: 3, 2, 1;
+	-fx-padding: 5px 20px;
+}
+
+#searchWord {
+	-fx-alignment: baseline-left;
+	-fx-pref-width: 230px;
+}
+
+#leftBox {
+	-fx-padding: 35px 5px 5px;
+	-fx-min-width: 240px;
+	-fx-max-width: 240px;
+}
+
+#wordEntries {
+	-fx-pref-width: 200px;
+}
+
+.bold {
+	-fx-font-weight: bold;
+}
+
+#wordSelected {
+	-fx-font-size: 24px;
+	-fx-alignment: baseline-left;
+}
+
+.speech {
+	-fx-focus-traversable: false;
+	-fx-text-fill: red;
+}
+
+.explainArea {
+	-fx-border-color: #d8d8d8;
+	-fx-border-width: 1px;
+	-fx-border-radius: 3, 2, 1;
+	-fx-background-color: #b2ccf7;
+	-fx-padding: 5px;
+	-fx-font-size: 14px;
+}
